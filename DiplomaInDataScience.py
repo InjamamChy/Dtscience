@@ -28,10 +28,10 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     )
-with open('credintials.yml', 'r') as f:
-    credintials = yaml.load(f, Loader=yaml.FullLoader)
-    db_credintials = credintials['db']
-    system_pass = credintials['system_pass']['admin']
+#with open('credintials.yml', 'r') as f:
+    #credintials = yaml.load(f, Loader=yaml.FullLoader)
+    #db_credintials = credintials['db']
+    #system_pass = credintials['system_pass']['admin']
     # email_sender = credintials['email_sender']
 def get_database_connection():
     db = mysql.connect(host = db_credintials['host'],
