@@ -28,14 +28,20 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     )
+with open('credintials.yml', 'r') as f:
+    credintials = yaml.load(f, Loader=yaml.FullLoader)
+    db_credintials = credintials['db']
+    system_pass = credintials['system_pass']['admin']
+    # email_sender = credintials['email_sender']
 def get_database_connection():
-     db = mysql.connect(host = "remotemysql.com",
-                      user = "QZY6wx9F4s",
-                       passwd = "oswIwq6Bkc",
-                       database = "QZY6wx9F4s",
-                       auth_plugin='mysql_native_password')
-     cursor = db.cursor()
-     return cursor, db
+    db = mysql.connect(host = db_credintials['host'],
+                      user = db_credintials['user'],
+                      passwd = db_credintials['passwd'],
+                      database = db_credintials['database'],
+                      auth_plugin= db_credintials['auth_plugin'])
+    cursor = db.cursor()
+
+    return cursor, db
  
 cursor, db = get_database_connection()
  
