@@ -3,7 +3,7 @@ db:
   user: "rhhvn1PazM"
   passwd: "9FGXXIshRE"
   database: "rhhvn1PazM"
-  auth_plugin: 'mysql_native_password"
+  auth_plugin: "mysql_native_password"
 
 system_pass:
   admin: "admin@123"
